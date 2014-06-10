@@ -222,6 +222,7 @@ def _get_login_manager(app):
     lm.login_view = '%s.login' % cv('BLUEPRINT_NAME', app=app)
     lm.user_loader(_user_loader)
     lm.token_loader(_token_loader)
+    lm.header_loader(_token_loader)
 
     if cv('FLASH_MESSAGES', app=app):
         lm.login_message, lm.login_message_category = cv('MSG_LOGIN', app=app)
